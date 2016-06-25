@@ -1,0 +1,56 @@
+org.tandemframework core 1.6.18-r28 
+org.tandemframework db-support 1.6.18-r28 
+org.tandemframework hib-support 1.6.18-r28 
+org.tandemframework rtf 1.6.18-r28 
+org.tandemframework caf 1.6.18-r28 
+org.tandemframework __classreplace 1.6.18-r28 
+org.tandemframework tap-support 1.6.18-r28 
+org.tandemframework common 1.6.18-r28 
+org.tandemframework sec 1.6.18-r28 
+org.tandemframework.shared sandbox 1.10.1-SH-r7990 Sandbox
+org.tandemframework.shared commonbase 1.10.1-SH-r7990 Общие прикладные функции
+org.tandemframework.shared fias 1.10.1-SH-r7990 Реестр адресов
+org.tandemframework.shared organization 1.10.1-SH-r7990 Оргструктура
+org.tandemframework.shared person 1.10.1-SH-r7990 Персоны
+org.tandemframework.shared cxfws 1.10.1-SH-r7990 Веб-сервисы CXF
+org.tandemframework.shared image 1.10.1-SH-r7990 Работа с изображениями
+org.tandemframework.shared archive 1.10.1-SH-r7990 Архив
+org.tandemframework ldap 1.6.18-r28 
+ru.tandemservice.uni.product unibase 2.10.1-uni-r2 Базовый модуль
+ru.tandemservice.uni.product uniedu 2.10.1-uni-r2 Образовательные программы
+org.tandemframework.shared employeebase 1.10.1-SH-r7990 Кадровый реестр
+org.tandemframework.shared ctr 1.10.1-SH-r7990 Базовые договоры
+ru.tandemservice.uni.product uni 2.10.1-uni-r2 Студенты
+ru.tandemservice.uni.product uniplaces 2.10.1-uni-r2 Здания и помещения (реестр)
+ru.tandemservice.uni.product unischedule 2.10.1-uni-r2 Базовое расписание
+ru.tandemservice.uni.product unimv 2.10.1-uni-r2 Визирование
+ru.tandemservice.uni.product unimove 2.10.1-uni-r2 Базовое движение
+ru.tandemservice.uni.product unienr14 2.10.1-uni-r2 Абитуриенты
+ru.tandemservice.uni.product unienr14_fis 2.10.1-uni-r2 Интеграция с ФИС
+ru.tandemservice.uni.product unictr 2.10.1-uni-r2 Контрагенты (старый)
+ru.tandemservice.uni.product unieductr 2.10.1-uni-r2 Договоры на обучение
+ru.tandemservice.uni.product uniepp 2.10.1-uni-r2 Учебный процесс
+ru.tandemservice.uni.product uniepp_price 2.10.1-uni-r2 Цены за учебные единицы
+ru.tandemservice.uni.product unispp 2.10.1-uni-r2 Расписание
+ru.tandemservice.uni.product unisession 2.10.1-uni-r2 Сессия
+ru.tandemservice.uni.product unitraining 2.10.1-uni-r2 БРС и журналы
+ru.tandemservice.uni.product movestudent 2.10.1-uni-r2 Движение студентов
+ru.tandemservice.uni.product unidip 2.10.1-uni-r2 Дипломирование
+ru.tandemservice.uni.product unisp 2.10.1-uni-r2 Выплаты студентам
+ru.tandemservice.uni.product uniepp_load 2.10.1-uni-r2 Нагрузка
+ru.tandemservice.nsiclient nsiclient 2.10.1-uni-r2 Интеграция с НСИ (базовые механизмы для обмена с НСИ)
+ru.tandemservice.nsiclient nsiuni 2.10.1-uni-r2 Интеграция с НСИ (модуль Базовые модули УНИ)
+ru.tandemservice.nsiclient nsifias 2.10.1-uni-r2 Интеграция с НСИ (модуль Реестр адресов)
+ru.tandemservice.nsiclient nsiperson 2.10.1-uni-r2 Интеграция с НСИ (модуль Персоны)
+ru.tandemservice.nsiclient nsiorganization 2.10.1-uni-r2 Интеграция с НСИ (модуль Оргструктура)
+ru.tandemservice.nsiclient nsiemployeebase 2.10.1-uni-r2 Интеграция с НСИ (модуль Кадровый реестр)
+ru.tandemservice.nsiclient nsictr 2.10.1-uni-r2 Интеграция с НСИ (модуль Базовые договоры)
+ru.tandemservice.nsiclient nsiuniedu 2.10.1-uni-r2 Интеграция с НСИ (модуль Образовательные программы)
+ru.tandemservice.nsiclient nsiuniepp 2.10.1-uni-r2 Интеграция с НСИ (модуль Учебный процесс)
+ru.tandemservice.nsiclient nsiunieductr 2.10.1-uni-r2 Интеграция с НСИ (модуль Договоры на обучение)
+ru.tandemservice.nsiclient nsiunienr14 2.10.1-uni-r2 НСИ Абитуриенты
+ru.tandemservice.uni.product unienr14_ctr 2.10.1-uni-r2 Договоры абитуриентов
+ru.tandemservice.nsiclient nsiunienr14_ctr 2.10.1-uni-r2 НСИ Договоры на обучение
+ru.tandemservice.uni.project unimirea 2.10.1-uni-r2 
+ru.tandemservice.uniclient unimirea_code 1.0.0-UC-SNAPSHOT 
+ru.tandemservice.uniclient unimirea_web 1.0.0-UC-SNAPSHOT 
