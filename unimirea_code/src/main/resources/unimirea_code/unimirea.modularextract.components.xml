@@ -1,0 +1,21 @@
+<components-config name="unimireaExtractcode" label="Компоненты для приказов модуля UNIMirea" xmlns="http://www.tandemframework.org/meta/components"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.tandemframework.org/meta/components http://www.tandemframework.org/schema/meta/meta-components.xsd">
+
+        <!-- Компоненты относящиеся к выпискам -->
+
+        <!--Об изменении вида возмещения затрат (тестовый)-->
+        <publisher name="costsChangesStuExtract" component="ru.tandemservice.uniclient.unimirea_code.component.modularextract.e1000.Pub"/>
+
+        <component package="ru.tandemservice.uniclient.unimirea_code.component.modularextract.e1000.AddEdit" title="Форма добавления и редактирования выписки «Об изменении вида возмещения затрат (тестовый)»">
+        <description>1000. Об изменении вида возмещения затрат (тестовый) CostsChangesStuExtract</description>
+        </component>
+
+        <component package="ru.tandemservice.uniclient.unimirea_code.component.modularextract.e1000.Pub" title="Публикатор выписки «Об изменении вида возмещения затрат (тестовый)»">
+        <description>1000. Об изменении вида возмещения затрат (тестовый) CostsChangesStuExtract </description>
+        <ext-point-def name="extractTabList" type="tabList"/>
+        </component>
+
+</components-config>
+
+

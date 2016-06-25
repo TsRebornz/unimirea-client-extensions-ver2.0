@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<data name="modularextract-catalogs-init" xmlns="http://www.tandemframework.org/meta/entity-data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.tandemframework.org/meta/entity-data http://www.tandemframework.org/schema/meta/entity-data.xsd">
+
+    <!-- Здесь живут не только сборные приказы но и списочные и шаблан для rtf отчета тоже, прошу обратить на это внимание -->
+
+    <entity name="studentExtractType" synchronize="user">
+
+        <item id="unimirea-1" synchronize="system">
+            <property name="title" value="Об изменении вида возмещения затрат (тестовый)" synchronize="user"/>
+            <property name="description" value="Вариант 1" synchronize="user"/>
+            <itemref name="parent" id="1" entity="studentExtractType"/>
+            <property name="active" value="false" synchronize="user"/>
+            <property name="businessObjectName" value="costsChangesStuExtract"/>
+            <property name="index" value="1"/>
+        </item>
+
+        <item id = "1000" synchronize="system">
+            <property name="title" value="Тестовый (тестовый)" synchronize="user" />
+            <itemref name="parent" id="1" entity="studentExtractType"/>
+            <property name="active" value="false" synchronize="user"/>
+            <property name="businessObjectName" value="testStuExtract"/>
+            <property name="index" value="2"/>
+        </item>
+
+        <item id="2.1000" synchronize="system">
+            <property name="title" value="О выдаче значков с символикой вуза" synchronize="user"/>
+            <property name="description" value="Вариант 1" synchronize="user"/>
+            <itemref name="parent" id="2" entity="studentExtractType"/>
+            <property name="active" value="false" synchronize="user"/>
+            <property name="index" value="1"/>
+        </item>
+
+        <item id="2.1000.1" synchronize="system">
+            <property name="title" value="О выдаче обычных значков" synchronize="user"/>
+            <itemref name="parent" id="2.1000" entity="studentExtractType"/>
+            <property name="active" value="false" synchronize="user"/>
+            <property name="businessObjectName" value="giveBadgeCommonListExtract"/>
+            <property name="index" value="6"/>
+        </item>
+
+        <item id="2.1000.2" synchronize="system">
+            <property name="title" value="О выдаче значков с символикой вуза" synchronize="user"/>
+            <itemref name="parent" id="2.1000" entity="studentExtractType"/>
+            <property name="active" value="false" synchronize="user"/>
+            <property name="businessObjectName" value="giveBadgeWithUSignListExtract"/>
+            <property name="index" value="7"/>
+        </item>
+    </entity>
+
+
+    <entity name="rtfReportTemplate" synchronize="system">
+        <item id="unimireaEntertainmentReport">
+            <property name="path" value="unimirea_code/templates/EntertainmentParticipation.rtf" />
+            <property name="comment" value="Шаблон для RTF Отчета Участие во внеучебном мероприятии" />
+        </item>
+    </entity>
+
+
+    <entity name="movestudentTemplate" synchronize="system">
+        <item id="unimirea-1.0">
+            <property name="title" value="Выписка для сборного приказа. Об изменении вида возмещения затрат (тестовый)" synchronize="user"/>
+            <itemref name="type" id="unimirea-1" entity="studentExtractType"/>
+            <property name="index" value="1"/>
+            <property name="path" value="unimirea_code/templates/modularorder/costsChangesStuExtract.rtf"/>
+        </item>
+        <item id="unimirea-1.0.1">
+            <property name="title" value="Шаблон для сборного приказа. Об изменении вида возмещения затрат (тестовый)" synchronize="user"/>
+            <itemref name="type" id="unimirea-1" entity="studentExtractType"/>
+            <property name="index" value="2"/>
+            <property name="path" value="unimirea_code/templates/modularorder/modular_costsChangesStuExtract.rtf"/>
+        </item>
+        <!-- Списочные приказы -->
+
+        <item id="unimirea-2.0">
+            <property name="title" value="Списочный приказ. О выдаче значков с символикой вуза" synchronize="user"/>
+            <itemref name="type" id="2.1000" entity="studentExtractType"/>
+            <property name="index" value="1"/>
+            <property name="path" value="unimirea_code/templates/listorder/listorder_givingBadge.rtf"/>
+        </item>
+        <item id="unimirea-2.0.1">
+            <property name="title" value="Шаблон параграфа списочного приказа. О выдаче обычных значков" synchronize="user"/>
+            <itemref name="type" id="2.1000.1" entity="studentExtractType"/>
+            <property name="index" value="1"/>
+            <property name="path" value="unimirea_code/templates/listorder/paragraph_giveBadge.rtf"/>
+        </item>
+        <item id="unimirea-2.0.1e">
+            <property name="title" value="Выписка из списочного приказа. О выдаче обычных значков." synchronize="user"/>
+            <itemref name="type" id="2.1000.1" entity="studentExtractType"/>
+            <property name="index" value="2"/>
+            <property name="path" value="unimirea_code/templates/listorder/extract_giveBadge.rtf"/>
+        </item>
+        <item id="unimirea-2.0.2">
+            <property name="title" value="Шаблон параграфа списочного приказа. О выдаче значков. О выдаче значков с символикой вуза" synchronize="user"/>
+            <itemref name="type" id="2.1000.2" entity="studentExtractType"/>
+            <property name="index" value="1"/>
+            <property name="path" value="unimirea_code/templates/listorder/paragraph_giveBadgeWithSign.rtf"/>
+        </item>
+        <item id="unimirea-2.0.2e">
+            <property name="title" value="Выписка из списочного приказа. О выдаче значков.  О выдаче значков с символикой вуза" synchronize="user"/>
+            <itemref name="type" id="2.1000.2" entity="studentExtractType"/>
+            <property name="index" value="2"/>
+            <property name="path" value="unimirea_code/templates/listorder/extract_giveBadgeWithSign.rtf"/>
+        </item>
+    </entity>
+
+</data>

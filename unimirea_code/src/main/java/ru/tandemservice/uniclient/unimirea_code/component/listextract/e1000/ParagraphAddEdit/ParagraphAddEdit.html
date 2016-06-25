@@ -1,0 +1,35 @@
+<div jwcid="@tandem:mRenderComponentRegion" cid="2627ug">
+    <div jwcid="@commonbase:sticker" cid="2627uh"><span jwcid="@tandem:mIf" condition="fast:model.editForm" cid="2627ui">Редактирование</span><span jwcid="@tandem:mElse" cid="2627uj">Добавление</span> параграфа списочного приказа <div jwcid="@Insert" value="fast:model.paragraph.editableTitle" cid="2627uk"/></div>
+    <div class="wrapper" cid="2627ul">
+        <table border="0" cellpadding="0" cellspacing="0" cid="2627um">
+            <tr cid="2627un">
+                <td colspan="2" cid="2627uo">
+                    <div class="section" cid="2627up">Данные параграфа списочного приказа</div>
+                    <div jwcid="type@tandem:mTextField" class="double-width" value="fast:model.paragraphType.title" displayName="Тип параграфа" disabled="true" cid="2627uq"/>
+                    <div class="section" cid="2627ur">Параметры параграфа списочного приказа</div>
+                </td>
+            </tr>
+            <tr cid="2627us">
+                <td cid="2627ut"><div jwcid="course@tandem:mSelect" source="fast:model.courseList" submitOnChange="true" updateOnChange="group,highSchool,formativeOrgUnit,territorialOrgUnit,studentList" value="fast:model.course" propertyId="id" propertyView="title" displayName="Курс" validators="validators:required" cid="2627uu"/></td>
+                <td cid="2627uv"><div jwcid="group@tandem:mAutoCompleteSelect" source="fast:model.groupListModel" submitOnChange="true" updateOnChange="highSchool,formativeOrgUnit,territorialOrgUnit,studentList" value="fast:model.group" propertyId="id" propertyView="title" displayName="Группа" validators="validators:required" cid="2627v0"/></td>
+            </tr>
+            <tr cid="2627v1">
+                <td colspan="2" cid="2627v2"><div jwcid="highSchool@tandem:mTextField" class="double-width" value="fast:model.group.educationOrgUnit.educationLevelHighSchool.configurableTitle" displayName="et:educationOrgUnit.educationLevelHighSchool" disabled="true" cid="2627v3"/></td>
+            </tr>
+            <tr cid="2627v4">
+                <td cid="2627v5"><div jwcid="formativeOrgUnit@tandem:mTextField" value="fast:model.group.educationOrgUnit.formativeOrgUnit.fullTitle" displayName="Формирующее подр." disabled="true" cid="2627v6"/></td>
+                <td cid="2627v7"><div jwcid="territorialOrgUnit@tandem:mTextField" value="fast:model.group.educationOrgUnit.territorialOrgUnit.territorialFullTitle" displayName="Территориальное подр." disabled="true" cid="2627v8"/></td>
+            </tr>
+        </table>
+        <table border="0" cellpadding="0" cellspacing="0" cid="2627v9">
+            <tr cid="2627va">
+                <td cid="2627vb"><div jwcid="studentList@tandem:mSearchList" showRowNumbersColumn="true" caption="Студенты, включаемые в параграф списочного приказа" dataSource="fast:model.dataSource" settingsKey="fast:model.searchListSettingsKey" cid="2627vc"/></td>
+            </tr>
+        </table>
+        <table class="container-table" cid="2627vd"><tr cid="2627ve">
+            <td cid="2627vf"><div jwcid="@tandem:mSubmit" name="save" listener="onClickApply" validate="true" id="submit_desktop" cid="2627vg">Сохранить</div></td>
+            <td cid="2627vh"><div jwcid="@tandem:mSubmit" name="cancel" listener="onClickDeactivate" cid="2627vi">Отменить</div></td>
+        </tr></table>
+    </div>
+</div>
+<!--#MainHash#BDF4326BA8214F0FCA9AA563576CA07A774EF472##-->

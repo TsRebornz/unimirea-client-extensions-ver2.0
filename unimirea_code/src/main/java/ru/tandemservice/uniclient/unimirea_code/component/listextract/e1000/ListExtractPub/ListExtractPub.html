@@ -1,0 +1,82 @@
+<div jwcid="@tandem:mBlock" securedObject="fast:model.extract" cid="2627ug">
+    <div jwcid="@tandem:mRenderComponentRegion" cid="2627uh">
+        <div jwcid="@commonbase:sticker" cid="2627ui"><div jwcid="@Insert" value="fast:model.extract.title" cid="2627uj"/></div>
+        <div class="wrapper" cid="2627uk">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" cid="2627ul">
+                <tr cid="2627um">
+                    <td class="actions-wrapper" cid="2627un">
+                        <div jwcid="@tandem:mIf" condition="fast:model.extractDeletable" cid="2627uo">
+                            <div jwcid="@tandem:mSubmit" renderAsLink="true" listener="onClickDeleteExtract" permissionKey="fast:model.secModel.delete" alert="Удалить выписку?" cid="2627up">Удалить</div>
+                        </div>
+                    </td>
+                    <td style="vertical-align:top;" cid="2627uq">
+                        <div jwcid="@tandem:mInfoTable" caption="Данные выписки из списочного приказа" cid="2627ur">
+                            <div jwcid="@tandem:mInfoProperty" title="Дата приказа" value="fast:model.extract.paragraph.order.commitDate" translator="translator:strong-date,pattern=dd.MM.yyyy" cid="2627us"/>
+                            <div jwcid="@tandem:mPublisherLinkInfoProperty" title="№ приказа" componentParameters="fast:model.extract.paragraph.order.id" cid="6rka8d">
+                        <span jwcid="@tandem:mIf" condition="fast:model.numberEmpty" cid="v144r0">
+                            <div jwcid="@Insert" value="fast:model.numberEmptyName" cid="v144r1"/>
+                            </span>
+                        <span jwcid="@tandem:mElse" cid="v144r2">
+                        <div jwcid="@Insert" value="fast:model.extract.paragraph.order.number" cid="6rka8e"/>
+                        </span>
+                            </div>
+                            <div jwcid="@tandem:mIf" condition="mvel:UserContext.getInstance().getPrincipalContext().isAdmin()" cid="v144r3">
+                                <div jwcid="@tandem:mInfoProperty" title="Тип приказа" value="fast:model.extract.paragraph.order.type.titleWithCode" cid="v144r4"/>
+                                <div jwcid="@tandem:mInfoProperty" title="№ параграфа в приказе" value="fast:model.extract.paragraph.number" cid="v144r5"/>
+                                <div jwcid="@tandem:mInfoProperty" title="Тип выписки" value="fast:model.extract.type.titleWithCode" cid="v144r6"/>
+                            </div>
+                            <div jwcid="@tandem:mElse" cid="v144r7">
+                                <div jwcid="@tandem:mInfoProperty" title="Тип приказа" value="fast:model.extract.paragraph.order.type.title" cid="2627uv"/>
+                                <div jwcid="@tandem:mInfoProperty" title="№ параграфа в приказе" value="fast:model.extract.paragraph.number" cid="2627v0"/>
+                                <div jwcid="@tandem:mInfoProperty" title="Тип выписки" value="fast:model.extract.type.title" cid="2627v1"/>
+                            </div>
+                            <div jwcid="@tandem:mInfoProperty" title="№ выписки в параграфе" value="fast:model.extract.number" cid="2627v2"/>
+                            <div jwcid="@tandem:mInfoProperty" title="Дата формирования" value="fast:model.extract.paragraph.order.createDate" translator="translator:strong-date,pattern=dd.MM.yyyy" cid="2627v3"/>
+                            <div jwcid="@tandem:mInfoProperty" title="Учебный год" value="fast:model.extract.paragraph.order.educationYear.title" cid="2627v4"/>
+                            <div jwcid="@tandem:mInfoProperty" title="Состояние выписки" value="fast:model.extract.state.title" cid="2627v5"/>
+                            <div jwcid="@tandem:mIf" condition="ognl:model.extract.paragraph.order.commitDateSystem != null" cid="2627v6">
+                                <div jwcid="@tandem:mInfoProperty" title="Дата проведения" value="fast:model.extract.paragraph.order.commitDateSystem" translator="translator:strong-date,pattern=dd.MM.yyyy HH:mm" cid="2627v7"/>
+                            </div>
+                            <div jwcid="@tandem:mInfoProperty" title="Комментарий к приказу" cid="1bm48f8">
+                                <span jwcid="@Insert"  value="fast:model.extract.comment" cid="1bm48f9"/>
+                                <div jwcid="@tandem:mSubmit" listener="onClickEditComment" permissionKey="fast:model.secModel.editGeneratedComment" renderAsLink="true"  decoratedLink="false" cid="1bm48fa">
+                                    Редактировать комментарий
+                                </div>
+                            </div>
+                        </div>
+                        <br cid="2627v8"/>
+                        <!--
+                                        <span jwcid="@tandem:mInfoTable" caption="Параметры выписки из списочного приказа">
+                                        </span>
+                                        <br/>
+                        -->
+                        <div jwcid="@tandem:mInfoTable" caption="Данные студента на момент создания выписки" cid="2627v9">
+                            <div jwcid="@tandem:mPublisherLinkInfoProperty" title="ФИО студента" componentParameters="mvel:{'publisherId': model.extract.entity.id, 'selectedStudentTab': 'studentTab'}" cid="2627va">
+                                <div jwcid="@Insert" value="fast:model.extract.studentTitleStr" cid="en03jo"/>
+                            </div>
+                            <div jwcid="@tandem:mInfoProperty" title="Состояние студента" value="fast:model.extract.studentStatusStr" cid="2627vb"/>
+                            <div jwcid="@tandem:mInfoProperty" title="Личный номер" value="fast:model.extract.personalNumberStr" cid="2627vc"/>
+                            <div jwcid="@tandem:mInfoProperty" title="Курс" value="fast:model.extract.courseStr" cid="2627vd"/>
+                            <div jwcid="@tandem:mInfoProperty" title="Группа" value="fast:model.extract.groupStr" cid="2627ve"/>
+                            <div jwcid="@tandem:mInfoProperty" title="Вид возмещения затрат" value="fast:model.extract.compensationTypeStr" cid="2627vf"/>
+                            <div jwcid="@tandem:mInfoProperty" title="Формирующее подр." value="fast:model.extract.formativeOrgUnitStr" cid="2627vg"/>
+                            <div jwcid="@tandem:mInfoProperty" title="Территориальное подр." value="fast:model.extract.territorialOrgUnitStr" cid="2627vh"/>
+                            <div jwcid="@tandem:mInfoProperty" title="et:educationOrgUnit.educationLevelHighSchool" value="fast:model.extract.educationLevelHighSchoolStr" cid="2627vi"/>
+                            <div jwcid="@tandem:mInfoProperty" title="Форма освоения" value="fast:model.extract.developFormStr" cid="2627vj"/>
+                            <div jwcid="@tandem:mInfoProperty" title="Условие освоения" value="fast:model.extract.developConditionStr" cid="2627vk"/>
+                            <div jwcid="@tandem:mInfoProperty" title="Технология освоения" value="fast:model.extract.developTechStr" cid="2627vl"/>
+                            <div jwcid="@tandem:mInfoProperty" title="Срок освоения" value="fast:model.extract.developPeriodStr" cid="2627vm"/>
+                        </div>
+                        <br cid="2627vn"/>
+                        <!--
+                                        <span jwcid="@tandem:mInfoTable" caption="Изменяемые данные">
+                                        </span>
+                                        <br/>
+                        -->
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!--#MainHash#304C9DFDB8103E9E102FDF49F864D65BEDD388C6##-->

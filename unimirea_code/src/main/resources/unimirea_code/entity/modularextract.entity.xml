@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-config name="modularextract" package-name="ru.tandemservice.uniclient.unimirea_code.entity"
+               xmlns="http://www.tandemframework.org/meta/entity"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.tandemframework.org/meta/entity http://www.tandemframework.org/schema/meta/meta-entity.xsd">
+
+    <!--Об изменении вида возмещения затрат (тестовый) -->
+    <child-entity name="costsChangesStuExtract" parent-ref="commonStuExtract" title="Об изменении вида возмещения затрат (тестовый)"/>
+
+
+</entity-config>

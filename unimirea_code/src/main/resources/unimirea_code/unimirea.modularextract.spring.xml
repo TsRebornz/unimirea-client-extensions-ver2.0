@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tandem-util="http://www.tandemframework.org/schema/tandem-util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.tandemframework.org/schema/tandem-util
+                           http://www.tandemframework.org/schema/tandem-util/spring-tandem-util.xsd"
+       default-init-method="init">
+
+    <bean id="costsChangesStuExtract_extractPrint" class="ru.tandemservice.uniclient.unimirea_code.component.modularextract.e1000.CostsChangesStuExtractPrint"/>
+    <bean id="costsChangesStuExtract_extractDao" parent="baseTransactionProxy">
+        <property name="proxyInterfaces">
+            <list>
+                <value>ru.tandemservice.unimove.dao.IExtractComponentDao</value>
+            </list>
+        </property>
+        <property name="target">
+            <bean class="ru.tandemservice.uniclient.unimirea_code.component.modularextract.e1000.CostsChangesStuExtractDAO">
+                <property name="sessionFactory" ref="sessionFactory"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!--Регистрация компонентов для последующей подмены-->
+    <tandem-util:map name="movestudentComponentsMap">
+        <entry key="costsChangesStuExtractPub" value="ru.tandemservice.uniclient.unimirea_code.component.modularextract.e1000.Pub"/>
+        <entry key="costsChangesStuExtractAddEdit" value="ru.tandemservice.uniclient.unimirea_code.component.modularextract.e1000.AddEdit"/>
+    </tandem-util:map>
+
+    <!--Регистрация сервисов-->
+
+    <tandem-util:set name="visingEntitySet">
+        <value>costsChangesStuExtract</value>
+    </tandem-util:set>
+
+    <tandem-util:map name="visaInitCoordinationMap">
+        <entry key="costsChangesStuExtract">
+            <ref bean="initCoordinationVisaExtractService"/>
+        </entry>
+    </tandem-util:map>
+
+    <tandem-util:map name="visaAcceptMap">
+        <entry key="costsChangesStuExtract">
+            <ref bean="acceptVisaExtractService"/>
+        </entry>
+    </tandem-util:map>
+
+    <tandem-util:map name="visaRejectMap">
+        <entry key="costsChangesStuExtract">
+            <ref bean="rejectVisaExtractService"/>
+        </entry>
+    </tandem-util:map>
+</beans>

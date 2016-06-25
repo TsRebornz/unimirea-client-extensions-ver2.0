@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-config name="client-entity-catalog-ru.tandemservice.uniclient-unimirea_code" package-name="ru.tandemservice.uniclient.unimirea_code.entity.catalog"
+               default-plugins="active-catalog"
+               xmlns="http://www.tandemframework.org/meta/entity"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.tandemframework.org/meta/entity http://www.tandemframework.org/schema/meta/meta-entity.xsd">
+
+    <!--
+    <entity name="testSimpleCatalog" title="Тестовый справочник «unimirea»">
+        <property name="shortTitle" type="trimmedstring" required="true" title="Сокращенное название"/>
+    </entity>
+    !-->
+
+</entity-config>
