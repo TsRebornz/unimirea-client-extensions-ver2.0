@@ -67,9 +67,17 @@ public class EntParticipationList extends BusinessComponentManager
     @Bean
     public IDefaultComboDataSourceHandler postDSHandler()
     {
-        return new EntityComboDataSourceHandler(getName(), OrgUnitTypePostRelation.class)
-                .where(OrgUnitTypePostRelation.id(), "postList", true)
-                .pageable(true);
+
+        return (new EntityComboDataSourceHandler(getName(), OrgUnitTypePostRelation.class) {
+            protected void applyWhereConditions(String alias, DQLSelectBuilder dql, ExecutionContext context) {
+                super.applyWhereConditions(alias, dql, context);
+                List postList = context.get("postList");
+                DQLSelectBuilder postRdql = new DQLSelectBuilder().fromEntity(OrgUnitTypePostRelation.class, "p");
+                FilterUtils.applySelectFilter(dql, alias, OrgUnitTypePostRelation.id() , postList);
+                dql.where(DQLExpressions.exists(postRdql.buildQuery()));
+
+            }
+        }).filter(OrgUnitTypePostRelation.postBoundedWithQGandQL().title()).filter(OrgUnitTypePostRelation.postBoundedWithQGandQL().code()).order(OrgUnitTypePostRelation.postBoundedWithQGandQL().title()).order(OrgUnitTypePostRelation.postBoundedWithQGandQL().title());
     }
 
     @Bean
