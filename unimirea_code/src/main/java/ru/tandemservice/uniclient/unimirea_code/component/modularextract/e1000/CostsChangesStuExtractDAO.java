@@ -57,7 +57,6 @@ public class CostsChangesStuExtractDAO extends UniBaseDao implements IExtractCom
         }
         orderData.setTransferOrderDate(costsChangesStuExtract.getPrevOrderDate());
         orderData.setTransferOrderNumber(costsChangesStuExtract.getPrevOrderNumber());
-        //MoveStudentDaoFacade.getCommonExtractUtil().doRollbackWithoutChangeStatus(costsChangesStuExtract);
         getSession().saveOrUpdate(orderData);
     }
 }
