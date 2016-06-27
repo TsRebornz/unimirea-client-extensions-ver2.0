@@ -12,8 +12,7 @@
                         <div jwcid="@tandem:mTextField" displayName="message:ui.firstName" value="settings:firstName"/>
                         <div jwcid="@tandem:mTextField" displayName="message:ui.middleName" value="settings:midName"/>
                         <div jwcid="@tandem:mTextField" displayName="message:ui.entName" value="settings:entName"/>
-                       <div jwcid="@tandem:mMultiSelect" model="ds:postDS" values="s:postList" displayName="message:ui.post" multidelete="false"  cid="d5dd73" visible = "ui:pageSettings.postListIsVisible"  />
-                        <!--div jwcid="@tandem:mAutoCompleteSelect" displayName="message:ui.selectEntDS" source="ds:selectEntDS" value="settings:entTypeUnit"/-->
+                        <div jwcid="@tandem:mMultiSelect" model="ds:postDS" values="s:postList" displayName="message:ui.post"multidelete="false" submitOnChange="true" cid="d5dd73" visible = "ui:pageSettings.postListIsVisible"  />
 
                         <div style="width:35%;float:left;" jwcid="@tandem:mSubmit" listener="saveSettings" id="submit_desktop">Применить</div>
                         <div style="width:35%;float:left;" jwcid="@tandem:mSubmit" listener="clearSettings" >Сбросить</div>

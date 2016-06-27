@@ -7,12 +7,16 @@ import org.tandemframework.core.component.State;
 import org.tandemframework.core.entity.IEntity;
 import org.tandemframework.core.sec.ISecured;
 import org.tandemframework.hibsupport.DataAccessServices;
+import org.tandemframework.shared.employeebase.base.entity.OrgUnitTypePostRelation;
 import org.tandemframework.shared.organization.base.entity.OrgUnit;
 import org.tandemframework.shared.organization.base.entity.TopOrgUnit;
 import org.tandemframework.shared.organization.base.util.OrgUnitSecModel;
 import ru.tandemservice.uniclient.unimirea_code.base.bo.EntParticipation.logic.*;
 import ru.tandemservice.uniclient.unimirea_code.base.bo.EntParticipation.ui.AddEdit.EntParticipationAddEdit;
 import ru.tandemservice.uniclient.unimirea_code.base.bo.EntParticipationEmp.EntParticipationEmpManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ocean on 14.10.2015.
@@ -31,6 +35,16 @@ public class EntParticipationListUI extends UIPresenter
     public static final String PROGRAM_SUBJECT_DS = "programSubjectDS";
     public static final String PROP_POST_LIST="postList";
     public static final String PAGE_SETTEING = "pageSettings";
+
+    public List _postList;
+
+    public List getPostList() {
+        return _postList;
+    }
+
+    public void setPostList(List _postList) {
+        this._postList = _postList;
+    }
 
     ISecured _secObj = null;
 
@@ -66,13 +80,6 @@ public class EntParticipationListUI extends UIPresenter
     public OrgUnitSecModel getSecModel(){ return _secModel; }
 
 
-//    EntertainmentTypeUnit entTypeUnit = context.get(TYPEUNIT);
-//
-//    String lastName = context.get(LAST_NAME);
-//    String firstName = context.get(FIRST_NAME);
-//    String midName = context.get(MID_NAME);
-//    LAST_NAME, FIRST_NAME, MID_NAME,TYPEUNIT
-
     @Override
     public void onComponentRefresh()
     {
@@ -86,6 +93,7 @@ public class EntParticipationListUI extends UIPresenter
         }else{
             _secObj = this.getSecuredObject();
             _pageSettings = new EntParticipationForMenuSettings();
+            this.clearSettings();
         }
 
     }
@@ -93,12 +101,15 @@ public class EntParticipationListUI extends UIPresenter
     @Override
     public void onBeforeDataSourceFetch(IUIDataSource dataSource)
     {
-        if(dataSource.getName().equals(EntParticipationList.SELECT_ENT_DS)){
+        if(dataSource.getName().equals(EntParticipationList.SELECT_ENT_DS) || (dataSource.getName().equals(EntParticipationList.POST_RELATION_DS) )){
             super.onBeforeDataSourceFetch(dataSource);
             dataSource.putAll(getSettings().getAsMap(EntParticipationDSHandler.LAST_NAME, EntParticipationDSHandler.FIRST_NAME, EntParticipationDSHandler.MID_NAME, EntParticipationDSHandler.TYPEUNIT));
-            dataSource.put(PROP_POST_LIST, _uiSettings.get(PROP_POST_LIST));
             dataSource.put(PAGE_SETTEING, _pageSettings);
             dataSource.put(ORG_UNIT, _orgUnit);
+            if (null != _orgUnit.getId()){
+                dataSource.put(PROP_POST_LIST, _uiSettings.get(PROP_POST_LIST));
+            }
+
         }
     }
 

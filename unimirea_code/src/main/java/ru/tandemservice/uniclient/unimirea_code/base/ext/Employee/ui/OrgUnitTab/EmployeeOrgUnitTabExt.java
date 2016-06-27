@@ -34,7 +34,6 @@ public class EmployeeOrgUnitTabExt extends BusinessComponentExtensionManager {
     @Bean
     public TabPanelExtension tabPanelExtension()
     {
-        //TODO Не забудь добавить права на вкладку тут типо того .permissionKey("ui:secModel.viewTabRestrictionAccessList")
         return tabPanelExtensionBuilder(_empOrgUnitTab.employeeTabPanelExtPoint())
                 .addTab(componentTab(ENT_PARTICIPATION_TAB,EntParticipationList.class)
                 .parameters("mvel:['orgUnitId':presenter.orgUnit.id]")
