@@ -28,11 +28,8 @@ public class EntParticipationRtfReport
     private final String templatePath = "C:\\TandemWS\\mirea\\unimirea_210r1\\unimirea\\unimirea_code\\src\\main\\resources\\unimirea_code\\templates\\EntertainmentParticipation.rtf";
 
     public RtfDocument initRtfDocument(){
-        //templatePath = File.
-
         ICommonDAO dao = DataAccessServices.dao();
         String path = getPathToTemplate();
-        //RtfDocument document = new RtfDocument();
         RtfDocument document = new RtfReader().read(dao.getByCode(RtfReportTemplate.class,"unimireaEntertainmentReport").getContent());
         if(null== document){
             try{

@@ -37,33 +37,5 @@ public class EntParticipationPrintXmlUI extends UIPresenter
             e.printStackTrace();
         }
         report = out.toByteArray();
-
-
     }
-
-
-    //            IBackgroundProcess process = new BackgroundProcessBase()
-//            {
-//                @Override
-//                public ProcessResult run(ProcessState state)
-//                {
-    //try {
-
-
-    //                    }
-//                    catch (Throwable t)
-//                    {
-//                        throw CoreExceptionUtils.getRuntimeException(t);
-//                    }
-    //return null;
-//                }
-//            };
-
-
-
-
-
-
-
-
 }

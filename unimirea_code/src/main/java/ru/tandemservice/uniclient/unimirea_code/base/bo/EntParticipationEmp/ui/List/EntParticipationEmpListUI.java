@@ -35,7 +35,6 @@ public class EntParticipationEmpListUI extends UIPresenter {
             EmployeePost employeePost = DataAccessServices.dao().get(getEmployeeID());
             getSettings().set(EntParticipationDSHandler.FIRST_NAME , employeePost.getPerson().getIdentityCard().getFirstName());
             getSettings().set(EntParticipationDSHandler.LAST_NAME , employeePost.getPerson().getIdentityCard().getLastName());
-            //employee.get
         }
 
         super.onComponentRefresh();
@@ -52,11 +51,9 @@ public class EntParticipationEmpListUI extends UIPresenter {
 
     public void onEditEntityFromList()
     {
-
         _uiActivation.asRegion(EntParticipationAddEdit.class)
                 .parameter("programId",getListenerParameterAsLong())
                 .activate();
-
     }
 
     public void onDeleteEntityFromList()

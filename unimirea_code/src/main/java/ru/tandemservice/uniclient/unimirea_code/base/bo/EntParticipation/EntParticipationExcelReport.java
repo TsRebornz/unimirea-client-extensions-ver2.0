@@ -19,13 +19,10 @@ import java.util.List;
  */
 public class EntParticipationExcelReport
 {
-    //int currentRow = 1;
-    //Макарона - код
     public ByteArrayOutputStream genereteExcelReport()throws Exception {
         List<EntertainmentPrtcption> list = DataAccessServices.dao().getList(EntertainmentPrtcption.class );
         Iterator<EntertainmentPrtcption> entityListIterator = list.iterator();
 
-        // ������� �������� �����
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         WorkbookSettings ws = new WorkbookSettings();
         ws.setEncoding("UTF-8");

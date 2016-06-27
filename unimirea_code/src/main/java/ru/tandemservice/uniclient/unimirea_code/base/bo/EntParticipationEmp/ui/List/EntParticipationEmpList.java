@@ -48,11 +48,6 @@ public class EntParticipationEmpList extends BusinessComponentManager {
         final DQLSelectBuilder entPart = new DQLSelectBuilder().fromEntity(EntertainmentPrtcption.class, alias);
         //Сюда пишем привязку из i18n.properties
         return columnListExtPointBuilder(SELECT_ENT_DS)
-                /*.addColumn(publisherColumn("entertainmentTypeUnit", EntertainmentPrtcption.unit().titile().s())
-                .order().create())*/
-                //EntertainmentPrtcption.overseer().s())
-
-
                 .addColumn(publisherColumn("title", EntertainmentPrtcption.P_FULL_ENTERTAINMENT_NAME).publisherLinkResolver(new IPublisherLinkResolver()
                 {
                     @Override
@@ -72,7 +67,6 @@ public class EntParticipationEmpList extends BusinessComponentManager {
                 .addColumn(textColumn("overseer", (EntertainmentPrtcption.overseerAsString())).create())
                 .addColumn(actionColumn(EDIT_COLUMN_NAME, CommonDefines.ICON_EDIT, EDIT_LISTENER).permissionKey("entertainmentEmpEdit"))
                 .addColumn(actionColumn(DELETE_COLUMN_NAME, CommonDefines.ICON_DELETE, DELETE_LISTENER,
-
                         FormattedMessage.with().template("selectEntDS.delete.alert")
                                 .parameter(EntertainmentPrtcption.P_FULL_ENTERTAINMENT_NAME)
                                 .create()

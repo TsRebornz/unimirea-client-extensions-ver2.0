@@ -3,6 +3,7 @@ package ru.tandemservice.uniclient.unimirea_code.base.bo.EntParticipation.ui.Lis
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.tandemframework.caf.config.IConfigItemBuilder;
+import org.tandemframework.caf.logic.ExecutionContext;
 import org.tandemframework.caf.logic.handler.IDefaultComboDataSourceHandler;
 import org.tandemframework.caf.logic.handler.IDefaultSearchDataSourceHandler;
 import org.tandemframework.caf.ui.config.BusinessComponentManager;
@@ -20,13 +21,17 @@ import org.tandemframework.core.util.ParametersMap;
 import org.tandemframework.core.view.formatter.FormattedMessage;
 import org.tandemframework.core.view.list.column.BooleanColumn;
 import org.tandemframework.core.view.list.column.IPublisherLinkResolver;
+import org.tandemframework.hibsupport.dql.DQLExpressions;
 import org.tandemframework.hibsupport.dql.DQLSelectBuilder;
 import org.tandemframework.shared.commonbase.base.util.ui.EntityComboDataSourceHandler;
 import org.tandemframework.shared.employeebase.base.entity.OrgUnitTypePostRelation;
+import ru.tandemservice.uni.util.FilterUtils;
 import ru.tandemservice.uniclient.unimirea_code.base.bo.EntParticipation.logic.EntParticipationDSHandler;
 import ru.tandemservice.uniclient.unimirea_code.base.bo.EntParticipation.ui.View.EntParticipationView;
 import ru.tandemservice.uniclient.unimirea_code.base.bo.EntParticipation.ui.View.EntParticipationViewUI;
 import ru.tandemservice.uniclient.unimirea_code.entity.EntertainmentPrtcption;
+
+import java.util.List;
 
 /**
  * Created by ocean on 14.10.2015.
@@ -67,15 +72,11 @@ public class EntParticipationList extends BusinessComponentManager
     @Bean
     public IDefaultComboDataSourceHandler postDSHandler()
     {
-
         return (new EntityComboDataSourceHandler(getName(), OrgUnitTypePostRelation.class) {
             protected void applyWhereConditions(String alias, DQLSelectBuilder dql, ExecutionContext context) {
                 super.applyWhereConditions(alias, dql, context);
                 List postList = context.get("postList");
-                DQLSelectBuilder postRdql = new DQLSelectBuilder().fromEntity(OrgUnitTypePostRelation.class, "p");
                 FilterUtils.applySelectFilter(dql, alias, OrgUnitTypePostRelation.id() , postList);
-                dql.where(DQLExpressions.exists(postRdql.buildQuery()));
-
             }
         }).filter(OrgUnitTypePostRelation.postBoundedWithQGandQL().title()).filter(OrgUnitTypePostRelation.postBoundedWithQGandQL().code()).order(OrgUnitTypePostRelation.postBoundedWithQGandQL().title()).order(OrgUnitTypePostRelation.postBoundedWithQGandQL().title());
     }

@@ -10,5 +10,4 @@ import org.tandemframework.caf.ui.config.BusinessComponentManager;
 public class EntParticipationPrint extends BusinessComponentManager
 {
 
-
 }

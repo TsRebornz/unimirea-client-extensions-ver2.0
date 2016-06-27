@@ -15,7 +15,6 @@ public class EntParticipationDAO extends SharedBaseDao implements IEntParticipat
     @Override
     public EntertainmentPrtcption saveOrUpdateEntParticipation(EntertainmentTypeUnit entUnit, EmployeePost employeePost, boolean overseer)
     {
-        //doGetEduLvl4Asp(EduProgramSubject subject, EduProgramSpecialization specialization, boolean create)
             Session session = this.lock("eduLvl.sync." + entUnit.getId());
             EntertainmentPrtcption result = null;
                 result = new EntertainmentPrtcption();
@@ -31,7 +30,6 @@ public class EntParticipationDAO extends SharedBaseDao implements IEntParticipat
     @Override
     public EntertainmentPrtcption saveOrUpdateEntParticipation(EntertainmentPrtcption entPart)
     {
-        //doGetEduLvl4Asp(EduProgramSubject subject, EduProgramSpecialization specialization, boolean create)
         Session session = this.lock("eduLvl.sync." + entPart.getUnit().getId());
         session.saveOrUpdate(entPart);
         Debug.end();

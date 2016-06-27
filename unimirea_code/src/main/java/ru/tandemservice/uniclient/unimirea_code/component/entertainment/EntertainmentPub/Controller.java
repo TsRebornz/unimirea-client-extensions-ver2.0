@@ -12,7 +12,6 @@ public class Controller extends AbstractBusinessController<IDAO,Model>
     public void onRefreshComponent(IBusinessComponent iBusinessComponent)
     {
         getDao().prepare(getModel(iBusinessComponent));
-        //
     }
 
 }

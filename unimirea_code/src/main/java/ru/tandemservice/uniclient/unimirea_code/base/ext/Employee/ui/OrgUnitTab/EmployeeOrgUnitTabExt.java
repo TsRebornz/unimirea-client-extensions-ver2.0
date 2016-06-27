@@ -16,7 +16,6 @@ import ru.tandemservice.uniclient.unimirea_code.base.bo.EntParticipation.ui.List
 @Configuration
 public class EmployeeOrgUnitTabExt extends BusinessComponentExtensionManager {
 
-    //Непонятно зачем unimirea_code+
     public static final String ADDON_NAME = "unimirea_code" + EmployeeOrgUnitTabExtUI.class.getSimpleName();
     public static final String ENT_PARTICIPATION_TAB = "entertainmentParticipationTab";
 

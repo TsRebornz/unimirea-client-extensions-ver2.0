@@ -12,15 +12,11 @@ import ru.tandemservice.uniclient.unimirea_code.base.bo.EntParticipation.EntPart
  */
 public class EntParticipationPrintUI extends UIPresenter
 {
-
-
     @Override
     public void onComponentRefresh()
     {
         EntParticipationRtfReport report = EntParticipationManager.instance()._entParticipationRtfReport();
-           // EntertainmentParticipation.rtf
-           // EntParticipationList.rtf
-           BusinessComponentUtils.downloadDocument(new CommonBaseRenderer().rtf().fileName("EntertainmentParticipation.rtf").document(report.initRtfDocument()), true);
+        BusinessComponentUtils.downloadDocument(new CommonBaseRenderer().rtf().fileName("EntertainmentParticipation.rtf").document(report.initRtfDocument()), true);
         super.onComponentRefresh();
     }
 

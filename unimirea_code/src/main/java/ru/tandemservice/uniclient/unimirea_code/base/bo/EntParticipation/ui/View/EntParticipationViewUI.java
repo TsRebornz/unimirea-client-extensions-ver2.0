@@ -19,11 +19,7 @@ public class EntParticipationViewUI extends UIPresenter
     private String employeeFulFio;
     private final EntityHolder<EntertainmentPrtcption> entPrtcptionHolder = new EntityHolder<>();
 
-
-
     // getters and setters
-
-
     public String getEmployeeFulFio()
     {
         if(null != entPrtcptionHolder.getValue())
@@ -33,8 +29,6 @@ public class EntParticipationViewUI extends UIPresenter
             return "";
         }
     }
-
-
 
     public String getPubIdKey()
     {

@@ -93,7 +93,6 @@ public class EntParticipationListUI extends UIPresenter
         }else{
             _secObj = this.getSecuredObject();
             _pageSettings = new EntParticipationForMenuSettings();
-            this.clearSettings();
         }
 
     }
