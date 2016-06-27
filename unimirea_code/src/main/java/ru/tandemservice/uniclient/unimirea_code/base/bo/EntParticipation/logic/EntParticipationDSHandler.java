@@ -76,7 +76,7 @@ public class EntParticipationDSHandler extends DefaultSearchDataSourceHandler
         FilterUtils.applySimpleLikeFilter(dql, alias, EntertainmentPrtcption.employee().employee().person().identityCard().lastName() , lastName );
 
         if(null != postList && !postList.isEmpty()){
-            dql.where(DQLExpressions.in(DQLExpressions.property("e", EntertainmentPrtcption.employee().postRelation().id()),postList ));
+            dql.where(DQLExpressions.in(DQLExpressions.property(alias, EntertainmentPrtcption.employee().postRelation().id()),postList ));
         }
 
         // .order problem shit
