@@ -3,7 +3,6 @@ package ru.tandemservice.uniclient.unimirea_code.base.bo.EntParticipation.ui.Lis
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.tandemframework.caf.config.IConfigItemBuilder;
-import org.tandemframework.caf.logic.ExecutionContext;
 import org.tandemframework.caf.logic.handler.IDefaultComboDataSourceHandler;
 import org.tandemframework.caf.logic.handler.IDefaultSearchDataSourceHandler;
 import org.tandemframework.caf.ui.config.BusinessComponentManager;
@@ -21,17 +20,13 @@ import org.tandemframework.core.util.ParametersMap;
 import org.tandemframework.core.view.formatter.FormattedMessage;
 import org.tandemframework.core.view.list.column.BooleanColumn;
 import org.tandemframework.core.view.list.column.IPublisherLinkResolver;
-import org.tandemframework.hibsupport.dql.DQLExpressions;
 import org.tandemframework.hibsupport.dql.DQLSelectBuilder;
 import org.tandemframework.shared.commonbase.base.util.ui.EntityComboDataSourceHandler;
 import org.tandemframework.shared.employeebase.base.entity.OrgUnitTypePostRelation;
-import ru.tandemservice.uni.util.FilterUtils;
 import ru.tandemservice.uniclient.unimirea_code.base.bo.EntParticipation.logic.EntParticipationDSHandler;
 import ru.tandemservice.uniclient.unimirea_code.base.bo.EntParticipation.ui.View.EntParticipationView;
 import ru.tandemservice.uniclient.unimirea_code.base.bo.EntParticipation.ui.View.EntParticipationViewUI;
 import ru.tandemservice.uniclient.unimirea_code.entity.EntertainmentPrtcption;
-
-import java.util.List;
 
 /**
  * Created by ocean on 14.10.2015.
@@ -54,7 +49,6 @@ public class EntParticipationList extends BusinessComponentManager
         //Регистрируем data source типа searchListDS c именем SELECT_ENT_DS
         return presenterExtPointBuilder().addDataSource(searchListDS(SELECT_ENT_DS, selectEntDS(), this.entParticipationDSHandler()))
                 .addDataSource(this.postDataSourceConfig())
-                //.addDataSource(this.selectDS(POST_RELATION_DS, this.postDSHandler()))
                 .create();
     }
 
@@ -79,11 +73,6 @@ public class EntParticipationList extends BusinessComponentManager
                 super.applyWhereConditions(alias, dql, context);
                 List postList = context.get("postList");
                 DQLSelectBuilder postRdql = new DQLSelectBuilder().fromEntity(OrgUnitTypePostRelation.class, "p");
-//                for(int i = 0; i < postList.size(); i++){
-//                    OrgUnitTypePostRelation entity = (OrgUnitTypePostRelation)postList.get(i);
-//                    FilterUtils.applySimpleLikeFilter(postRdql,"p", OrgUnitTypePostRelation.postBoundedWithQGandQL().title(), entity.getTitle());
-//                }
-
                 FilterUtils.applySelectFilter(dql, alias, OrgUnitTypePostRelation.id() , postList);
                 dql.where(DQLExpressions.exists(postRdql.buildQuery()));
 
