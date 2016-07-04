@@ -31,12 +31,7 @@ public class MS_unimirea_code_1x0x0_9to10 extends IndependentMigrationScript
 		////////////////////////////////////////////////////////////////////////////////
 		// сущность entertainmentTypeUnit
 
-		// удалено свойство titile
-		{
-			// удалить колонку
-			tool.dropColumn("entertainmenttypeunit_t", "titile_p");
 
-		}
 
 		// создано обязательное свойство title
 		{
@@ -46,11 +41,17 @@ public class MS_unimirea_code_1x0x0_9to10 extends IndependentMigrationScript
 
 
 			// задать значение по умолчанию
-			String defaultTitle = "default title";
-			tool.executeUpdate("update entertainmenttypeunit_t set title_p=? where title_p is null", defaultTitle);
+			tool.executeUpdate("update entertainmenttypeunit_t set title_p=titile_p where title_p is null");
 
 			// сделать колонку NOT NULL
 			tool.setColumnNullable("entertainmenttypeunit_t", "title_p", false);
+
+		}
+		
+		// удалено свойство titile
+		{
+			// удалить колонку
+			tool.dropColumn("entertainmenttypeunit_t", "titile_p");
 
 		}
 
