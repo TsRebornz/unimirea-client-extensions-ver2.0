@@ -39,8 +39,7 @@ public class MS_unimirea_code_1x0x0_3to4 extends IndependentMigrationScript
 
 
 			// задать значение по умолчанию
-			Long defaultEmployee = 100000000l;
-			tool.executeUpdate("update entertainmentprtcption_t set employee_id=? where employee_id is null", defaultEmployee);
+			tool.executeUpdate("update entertainmentprtcption_t set employee_id=type_id where employee_id is null");
 
 			// сделать колонку NOT NULL
 			tool.setColumnNullable("entertainmentprtcption_t", "employee_id", false);
