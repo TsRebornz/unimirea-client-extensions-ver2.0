@@ -31,14 +31,6 @@ public class MS_unimirea_code_1x0x0_3to4 extends IndependentMigrationScript
 		////////////////////////////////////////////////////////////////////////////////
 		// сущность entertainmentPrtcption
 
-		// удалено свойство type
-		{
-
-			// удалить колонку
-			tool.dropColumn("entertainmentprtcption_t", "type_id");
-
-		}
-
 		// создано обязательное свойство employee
 		{
 			// создать колонку
@@ -52,6 +44,14 @@ public class MS_unimirea_code_1x0x0_3to4 extends IndependentMigrationScript
 
 			// сделать колонку NOT NULL
 			tool.setColumnNullable("entertainmentprtcption_t", "employee_id", false);
+
+		}
+		
+		// удалено свойство type
+		{
+
+			// удалить колонку
+			tool.dropColumn("entertainmentprtcption_t", "type_id");
 
 		}
 
